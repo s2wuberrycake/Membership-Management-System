@@ -133,13 +133,103 @@
                         Margin="0,35,0,0">
                 
                 <Image Source="/Assets/Images/logo.png"
+                       Opacity="0.8"
                        Width="100"
                        Height="100"/>
 
-                <TextBlock Text="BODIMETRIX FITNESS GYM"
-                           FontFamily="Dubai Medium"/>
+                <!--TextBlock Text="BODIMETRIX FITNESS GYM"
+                           FontFamily="Consolas"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,4,0,20"/-->
 
+                <TextBlock Text="Username"
+                           FontFamily="Consolas"
+                           FontSize="8"
+                           Foreground="DarkGray"
+                           Margin="32,12,32,0"/>
+
+                <TextBox x:Name="txtUser"
+                         FontFamily="Consolas"
+                         FontSize="13"
+                         Background="#ededed"
+                         CaretBrush="LightGray"
+                         BorderBrush="Transparent"
+                         BorderThickness="1,1,1,1"
+                         
+                         VerticalContentAlignment="Center"
+                         Height="24"
+                         Margin="32,1,32,0">
+                </TextBox>
+
+                <TextBlock Text="Password"
+                           FontFamily="Consolas"
+                           FontSize="8"
+                           Foreground="DarkGray"
+                           Margin="32,4,32,0"/>
+
+                <PasswordBox x:Name="txtPassword"
+                         FontFamily="Consolas"
+                         FontSize="13"
+                         Background="#ededed"
+                         CaretBrush="LightGray"
+                         BorderBrush="Transparent"
+                         BorderThickness="1,1,1,1" 
+                         VerticalContentAlignment="Center"
+                         Height="24"
+                         Margin="32,1,32,0">
+                </PasswordBox>
+
+                <Button x:Name="btnLogin"
+                        BorderThickness="0"
+                        Content=">>"
+                        FontSize="12"
+                        FontFamily="Consolas"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Margin="0,12,0,0"
+                        Click="btnClose_Click">    
+                    
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ededed"/>
+                            <Setter Property="Foreground" Value="Black"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#d12626"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Margin="20,120,20,0" Height="48" Width="48"        
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock Text="CAN'T SIGN IN? "
+                           HorizontalAlignment="Center"
+                           FontFamily="Consolas"
+                           FontSize="8"
+                           Foreground="Gray"
+                           Margin="32,4,32,0"
+                           Cursor="Hand"/>
             </StackPanel>
+
+                
+
             <!--TextBlock Text="LOG IN" Foreground="Black" FontSize="10" FontFamily="Monsterrat" Grid.Column="0" VerticalAlignment="Center" Margin="10,0,0,0" /-->
         </Grid>
     </Border>
