@@ -4,7 +4,5 @@
              xmlns:local="clr-namespace:Membership_Management_System"
              StartupUri="View/LoginView.xaml">
     <Application.Resources>
-        <FontFamily x:Key="InterRegular">pack://application:,,,/Fonts/#Inter 18pt</FontFamily>
-        <FontFamily x:Key="InterSemiBold">pack://application:,,,/Fonts/#Inter 18pt SemiBold</FontFamily>
     </Application.Resources>
 </Application>

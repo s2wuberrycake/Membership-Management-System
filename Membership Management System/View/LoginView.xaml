@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Membership_Management_System.View"
+        xmlns:viewModel="clr-namespace:Membership_Management_System.ViewModel" xmlns:customcontrols="clr-namespace:Membership_Management_System.CustomControls"
         mc:Ignorable="d"
         
         AllowsTransparency="True"
@@ -14,6 +15,18 @@
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown">
 
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+    
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/> 
+    </Window.Visibility>
+    
     <Border CornerRadius="12">
 
         <Border.Background>
@@ -151,6 +164,7 @@
                            Margin="32,12,32,0"/>
 
                 <TextBox x:Name="txtUser"
+                         Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                          FontFamily="Consolas"
                          FontSize="13"
                          Background="#ededed"
@@ -160,7 +174,7 @@
                          
                          VerticalContentAlignment="Center"
                          Height="24"
-                         Margin="32,1,32,0">
+                         Margin="32,1,32,0" TextChanged="txtUser_TextChanged">
                 </TextBox>
 
                 <TextBlock Text="Password"
@@ -169,19 +183,20 @@
                            Foreground="DarkGray"
                            Margin="32,4,32,0"/>
 
-                <PasswordBox x:Name="txtPassword"
-                         FontFamily="Consolas"
-                         FontSize="13"
-                         Background="#ededed"
-                         CaretBrush="LightGray"
-                         BorderBrush="Transparent"
-                         BorderThickness="1,1,1,1" 
-                         VerticalContentAlignment="Center"
-                         Height="24"
-                         Margin="32,1,32,0">
-                </PasswordBox>
+                <customcontrols:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    Height="24"
+                                                    Margin="32,1,32,0">
+                </customcontrols:BindablePasswordBox>
+
+                <TextBlock Text="{Binding ErrorMessage}"
+                           FontFamily="Consolas"
+                           FontSize="8"
+                           Foreground="#eb6a6a"
+                           Margin="32,4,32,0"
+                           TextWrapping="Wrap"/>
 
                 <Button x:Name="btnLogin"
+                        Command="{Binding LoginCommand}"
                         BorderThickness="0"
                         Content=">>"
                         FontSize="12"

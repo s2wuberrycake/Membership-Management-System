@@ -42,5 +42,10 @@ namespace Membership_Management_System.View
         {
             Application.Current.Shutdown();
         }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
