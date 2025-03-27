@@ -16,6 +16,4 @@ namespace Membership_Management_System.Model
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
         IEnumerable<UserModel> GetbyAll();
-        //...dapat makikita mo to pag nag sync ka ng project
-    }
-}
+        //...dapat makikita mo to pag nag sync ka ng projectsdsdsdsdsdsadsadsadsdsdsdsdsdsd
