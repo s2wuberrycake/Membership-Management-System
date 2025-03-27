@@ -17,7 +17,7 @@ namespace Membership_Management_System.View
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    /// 
+    /// hello this is my comment
 
 
     public partial class LoginView : Window
