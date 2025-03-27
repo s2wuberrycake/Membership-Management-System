@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Membership_Management_System.Model
 {
-    class UserModel
+    public class UserModel
     {
         public int account_id { get; set; }  // Matches MySQL INT AUTO_INCREMENT
         public string username { get; set; }

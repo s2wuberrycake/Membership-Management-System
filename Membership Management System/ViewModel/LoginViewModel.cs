@@ -71,7 +71,7 @@ namespace Membership_Management_System.ViewModel
 
         //-> Commands
         public ICommand LoginCommand { get; }
-        public ICommand RecoverPasswordCommand { get; }
+        //public ICommand RecoverPasswordCommand { get; }
         public ICommand ShowPasswordCommand { get; }
         public ICommand RememberPasswordCommand { get; }
 
@@ -79,7 +79,7 @@ namespace Membership_Management_System.ViewModel
         public LoginViewModel()
         {
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
-            RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("", ""));
+            //RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("", ""));
         }
 
         private bool CanExecuteLoginCommand(object obj)
@@ -98,10 +98,10 @@ namespace Membership_Management_System.ViewModel
 
         }
 
-        private void ExecuteRecoverPassCommand(string username, string email)
+        /*private void ExecuteRecoverPassCommand(string username, string email)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
     }
 }
