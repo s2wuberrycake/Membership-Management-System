@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Membership_Management_System.Model;
+using Membership_Management_System.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -15,6 +19,7 @@ namespace Membership_Management_System.ViewModel
         private SecureString _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
+        private IUserRepository userRepository;
 
         //Properties
         public string Username
@@ -78,6 +83,7 @@ namespace Membership_Management_System.ViewModel
         //Constructor
         public LoginViewModel()
         {
+            userRepository = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             //RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("", ""));
         }
@@ -95,7 +101,16 @@ namespace Membership_Management_System.ViewModel
 
         private void ExecuteLoginCommand(object obj)
         {
-
+            var IsValidUser = userRepository.AuthenticateUser(new System.Net.NetworkCredential(Username, Password));
+            if (IsValidUser)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
+                IsViewVisible = false;
+            }
+            else
+            {
+                ErrorMessage = "Invalid username or password";
+            }
         }
 
         /*private void ExecuteRecoverPassCommand(string username, string email)
