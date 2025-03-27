@@ -12,10 +12,12 @@ namespace Membership_Management_System.Model
         bool AuthenticateUser(NetworkCredential credential);
         void Add(UserModel userModel);
         void Edit(UserModel userModel);
-        void Remove(int id);
-        UserModel GetById(int id);
+        void Remove(int account_id);
+        UserModel GetById(int account_id);
         UserModel GetByUsername(string username);
         IEnumerable<UserModel> GetByAll();
     }
 }
+
+        //sign by strawberry
         //...dapat makikita mo to pag nag sync ka ng projectsdsdsdsdsdsadsadsadsdsdsdsdsdsd
