@@ -20,5 +20,4 @@ namespace Membership_Management_System.Model
 }
 
         //sign by strawberry
-        //...dapat makikita mo to pag nag sync ka
         //...signbyyashiro
