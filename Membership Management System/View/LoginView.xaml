@@ -234,13 +234,13 @@
                     </Button.Template>
                 </Button>
 
-                <TextBlock Text="CAN'T SIGN IN? "
+                <!--TextBlock Text="CAN'T SIGN IN? "
                            HorizontalAlignment="Center"
                            FontFamily="Consolas"
                            FontSize="8"
                            Foreground="Gray"
                            Margin="32,4,32,0"
-                           Cursor="Hand"/>
+                           Cursor="Hand"/-->
             </StackPanel>
 
                 
