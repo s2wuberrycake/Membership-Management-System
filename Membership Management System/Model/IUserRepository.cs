@@ -18,5 +18,7 @@ namespace Membership_Management_System.Model
         IEnumerable<UserModel> GetByAll();
     }
 }
+
+        //sign by strawberry
         //...dapat makikita mo to pag nag sync ka ng projectsdsdsdsdsdsadsadsadsdsdsdsdsdsd
         //...signbyyashiro
