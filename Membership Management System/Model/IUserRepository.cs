@@ -22,3 +22,4 @@ namespace Membership_Management_System.Model
 //sign by strawberry
 // differents in the code are the namespace and the class name
 //...signbyyashiro
+// sign by josuharo
