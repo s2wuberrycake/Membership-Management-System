@@ -15,5 +15,7 @@ namespace Membership_Management_System.Model
         void Remove(int id);
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
-        IEnumerable<UserModel> GetbyAll();
+        IEnumerable<UserModel> GetByAll();
+    }
+}
         //...dapat makikita mo to pag nag sync ka ng projectsdsdsdsdsdsadsadsadsdsdsdsdsdsd
